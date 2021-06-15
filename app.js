@@ -35,7 +35,7 @@
 
 
     //-----------------MongoDB USER----------------------//
-    mongoose.connect("mongodb://localhost/SChasersDB", {
+    mongoose.connect("mongodb+srv://admin-niren:Test123@cluster0.apmqf.mongodb.net/SChasersDB", {
         useNewUrlParser: true,
         useUnifiedTopology: true
     });
