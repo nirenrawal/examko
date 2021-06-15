@@ -1,0 +1,9 @@
+    #footer {
+        display: flex;
+        margin-top: 80px;
+        text-align: center;
+    }
+
+    .social-icon {
+        margin: 20px 10px;
+    }

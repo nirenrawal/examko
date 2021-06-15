@@ -1,0 +1,15 @@
+/* th {
+    color: #fff;
+} */
+
+tr:nth-child(even) {
+    background-color: rgb(20, 178, 218);
+}
+
+.table {
+    margin-top: 40px;
+}
+
+#t-button {
+    margin-left: 2px;
+}

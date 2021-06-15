@@ -1,0 +1,16 @@
+#logo {
+    width: 30%;
+}
+
+#main-content {
+    min-height: calc(100vh - 120px);
+}
+
+.nav-item .dropdown {
+    margin-top: 8px;
+}
+
+.whole-body {
+    background-color: rgb(221, 248, 212);
+    font-family: Montserrat;
+}

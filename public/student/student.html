@@ -1,0 +1,70 @@
+<table class="table table-striped">
+    <tr class="bg-info">
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Zip Code</th>
+        <th>Country</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Course</th>
+        <th></th>
+    </tr>
+
+    <tbody id="myTable">
+
+    </tbody>
+</table>
+
+<script>
+    const table = document.getElementById('myTable');
+    async function fetchData() {
+        const response = await fetch('http://localhost:8080/getStudents'); 
+        const data = await response.json();
+
+        for (let i = 0; i < data.length; i++) {
+            let row = `<tr>
+                        <td>${data[i].firstName}</td>
+                        <td>${data[i].lastName}</td>
+                        <td>${data[i].address}</td>
+                        <td>${data[i].city}</td>
+                        <td>${data[i].zip}</td>
+                        <td>${data[i].country}</td>
+                        <td>${data[i].email}</td>
+                        <td>${data[i].phone}</td>
+                        <td>${data[i].course}</td>
+                        <td id="buttons">
+                            <a href="/students/update/${data[i]._id}"><button id="t-button" type="button" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></button></a>
+                            <button type="button" class="btn btn-danger btn-sm" data-id="${data[i]._id}" ><i class="fas fa-trash-alt"></i></button>
+                        </td>
+                    </tr>`
+            table.innerHTML += row;
+        }
+
+    }
+    fetchData();
+
+
+    table.addEventListener('click', event => {
+
+        if (event.target.classList.contains("btn-danger")) {
+
+            const id = event.target.dataset.id;
+            fetch(`https://cryptic-ridge-19464.herokuapp.com/deleteStudent`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    id
+                })
+            }).then((data) => {
+                if (data.statusText === "OK") {
+                    location.reload();
+                }
+            })
+        }
+
+    })
+</script>

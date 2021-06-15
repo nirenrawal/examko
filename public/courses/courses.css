@@ -1,0 +1,26 @@
+    .pricing-column.left {
+        margin: 20px 10px 20px 150px;
+        text-align: center;
+    }
+
+
+    .pricing-column.middle {
+        margin: 20px 10px 20px 10px;
+        text-align: center;
+    }
+
+
+    .pricing-column.right {
+        margin: 20px 50px 20px 10px;
+        text-align: center;
+    }
+
+    #courses.container-fluid {
+        margin-top: 5rem;
+    }
+
+    .price {
+        font-weight: bold;
+        font-size: 16px;
+        margin: 15px 0;
+    }
